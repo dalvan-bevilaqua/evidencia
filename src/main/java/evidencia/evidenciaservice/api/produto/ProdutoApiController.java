@@ -1,8 +1,8 @@
-package evidencia.evidenciaservice.produto.api;
+package evidencia.evidenciaservice.api.produto;
 
-import evidencia.evidenciaservice.produto.model.Produto;
-import evidencia.evidenciaservice.produto.service.ProdutoService;
-import evidencia.evidenciaservice.produto.service.repository.ProdutoRepository;
+import evidencia.evidenciaservice.model.Produto;
+import evidencia.evidenciaservice.service.produto.ProdutoService;
+import evidencia.evidenciaservice.repository.produto.ProdutoRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +26,7 @@ public class ProdutoApiController {
                 ResponseEntity.status(HttpStatus.ACCEPTED).body(produtoSalvo);
     }
 
-    @GetMapping("/all")
+    @GetMapping
     public ResponseEntity<List<Produto>> buscarProdutos() {
         List<Produto> produtoSalvo = produtoRepository.findAll();
         return (produtoSalvo != null) ? ResponseEntity.ok(produtoSalvo) :

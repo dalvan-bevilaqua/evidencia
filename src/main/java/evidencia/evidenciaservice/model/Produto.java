@@ -1,16 +1,21 @@
-package evidencia.evidenciaservice.produto.model;
+package evidencia.evidenciaservice.model;
 
 
 import com.sun.istack.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import org.hibernate.annotations.GenericGenerator;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
+@Builder
 @Data
 @Table(name = "produto")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Produto {
 
     @Id
