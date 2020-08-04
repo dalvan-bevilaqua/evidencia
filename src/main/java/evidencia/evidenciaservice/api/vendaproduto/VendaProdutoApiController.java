@@ -33,6 +33,12 @@ public class VendaProdutoApiController {
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(vendaProdutos);
     }
 
+    @GetMapping("codigovenda/{codigoVenda}")
+    public ResponseEntity<List<VendaProduto>> buscarProdutosVenda(@PathVariable Long codigoVenda) {
+        List<VendaProduto> vendaProdutos = vendaProdutoRespository.buscarProdutoVendaPorCodigoVenda(codigoVenda);
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(vendaProdutos);
+    }
+
     @DeleteMapping("/{codigo}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void remover(@PathVariable Long codigo) {

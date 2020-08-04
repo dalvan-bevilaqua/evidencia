@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Builder
@@ -26,5 +27,8 @@ public class Venda {
 
     @Column(name = "formaPagamento")
     private String formaPagamento;
+
+    @Column(name = "valorVenda")
+    private BigDecimal valorVenda;
 
 }

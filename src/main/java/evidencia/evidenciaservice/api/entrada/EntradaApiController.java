@@ -14,8 +14,7 @@ public class EntradaApiController {
 
     @Autowired
     EntradaService entradaService;
-
-
+    
     @PostMapping
     public ResponseEntity<Entrada> salvar(@RequestBody Entrada entrada) {
         return ResponseEntity.ok(entradaService.finalizarEntrada(entrada));

@@ -33,4 +33,7 @@ public class EntradaProduto {
     @Column(name = "valor")
     private BigDecimal valor;
 
+    @Column(name = "quantidade")
+    private String quantidade;
+
 }
