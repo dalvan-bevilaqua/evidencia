@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: evidencia.evidenciaservice.EvidenciaserviceApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.586 s - in evidencia.evidenciaservice.EvidenciaserviceApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.014 s - in evidencia.evidenciaservice.EvidenciaserviceApplicationTests

@@ -20,6 +20,9 @@ public interface VendaProdutoRespository extends JpaRepository<VendaProduto, Lon
     @Query("select v from VendaProduto v where v.codigoVenda = ?1")
     List<VendaProduto> buscarProdutoVendaPorCodigoVenda(Long codigoVenda);
 
+    @Query("select v from VendaProduto v where v.codigoProduto = ?1")
+    List<VendaProduto> buscarProdutoVendaPorCodigoProduto(Long codigoProduto);
+
     @Modifying
     @Query("UPDATE VendaProduto v SET v.codigoVenda =:codigoVenda WHERE v.codigoVenda = null")
     void finalizarVenda(@Param("codigoVenda") Long codigoVenda);

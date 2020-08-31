@@ -16,4 +16,7 @@ public interface EntradaProdutoRepository extends JpaRepository<EntradaProduto, 
     @Modifying
     @Query("UPDATE EntradaProduto v SET v.codigoEntrada =:codigoEntrada WHERE v.codigoEntrada = null")
     void finalizarEntrada(@Param("codigoEntrada") Long codigoEntrada);
+
+    @Query("select v from EntradaProduto v where v.codigoProduto = ?1")
+    List<EntradaProduto> getEntradaPorCodigoProduto(Long codigo);
 }
