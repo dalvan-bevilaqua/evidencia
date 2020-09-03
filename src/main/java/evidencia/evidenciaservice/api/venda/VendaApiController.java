@@ -41,6 +41,7 @@ public class VendaApiController {
         return (vendasSalvas != null) ? ResponseEntity.ok(vendasSalvas) :
                 ResponseEntity.status(HttpStatus.ACCEPTED).body(vendasSalvas);
     }
+
     @RequestMapping(value = "/relatorioVendas", method = RequestMethod.GET,
             produces = MediaType.APPLICATION_PDF_VALUE)
     public ResponseEntity<InputStreamResource> relatorioVendas(VendaFilter vendaFilter) {
