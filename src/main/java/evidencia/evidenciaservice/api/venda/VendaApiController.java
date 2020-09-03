@@ -42,8 +42,7 @@ public class VendaApiController {
                 ResponseEntity.status(HttpStatus.ACCEPTED).body(vendasSalvas);
     }
 
-    @RequestMapping(value = "/relatorioVendas", method = RequestMethod.GET,
-            produces = MediaType.APPLICATION_PDF_VALUE)
+    @RequestMapping(value = "/relatorioVendas", method = RequestMethod.GET, produces = MediaType.APPLICATION_PDF_VALUE)
     public ResponseEntity<InputStreamResource> relatorioVendas(VendaFilter vendaFilter) {
         List<Venda> vendasSalvas = vendaService.findByDate(vendaFilter);
         ByteArrayInputStream bis = VendasRelatorio.emitirRelatorioVendas(vendasSalvas);
