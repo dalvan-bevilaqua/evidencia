@@ -3,7 +3,9 @@ package evidencia.evidenciaservice.service.venda;
 import evidencia.evidenciaservice.model.Caixa;
 import evidencia.evidenciaservice.model.Venda;
 import evidencia.evidenciaservice.model.VendaProduto;
+import evidencia.evidenciaservice.model.filter.VendaFilter;
 import evidencia.evidenciaservice.repository.caixa.CaixaRepository;
+import evidencia.evidenciaservice.repository.venda.VendaRepositoryCustom;
 import evidencia.evidenciaservice.repository.venda.VendaRespository;
 import evidencia.evidenciaservice.repository.vendaproduto.VendaProdutoRespository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +26,9 @@ public class VendaService {
 
     @Autowired
     private CaixaRepository caixaRepository;
+
+    @Autowired
+    private VendaRepositoryCustom vendaRepositoryCustom;
 
     @Transactional
     public Venda finalizarVenda(Venda vendaParm) {
@@ -56,5 +61,10 @@ public class VendaService {
         if (vendaProduto.size() == 0) {
             throw new RuntimeException("Não exite Produto para finalizar");
         }
+    }
+
+    public List<Venda> findByDate(VendaFilter vendaFilter) {
+
+        return vendaRepositoryCustom.buscarVendaPorData(vendaFilter);
     }
 }

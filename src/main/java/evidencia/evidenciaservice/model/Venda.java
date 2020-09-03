@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -29,6 +30,9 @@ public class Venda {
 
     @Column(name = "data")
     private Date data;
+
+    @Transient
+    private Date dataFinal;
 
     @Column(name = "formaPagamento")
     private String formaPagamento;
